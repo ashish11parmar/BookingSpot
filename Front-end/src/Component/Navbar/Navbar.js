@@ -1,8 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from './Images/logo.png';
+import Logo from '../Images/logo.png';
 import './Navbar.css';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+
 
 const Navbar = () => {
 
@@ -11,7 +12,7 @@ const Navbar = () => {
     
    <>
    
-   <nav className="navbar navbar-expand-lg">
+   <nav className="navbar navbar-expand-lg" id='navigation'>
   <div className="container-fluid">
     <img width="180px" height="50px" className='logo' src={Logo} alt="BOOKING SPOT"/>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,10 +21,10 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav">
         <li className="nav-item ">
-          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+          <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/room">Rooms</Link>
+          <NavLink className="nav-link" to="/room">Rooms</NavLink>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,16 +41,16 @@ const Navbar = () => {
           </ul>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/about">About Us</Link>
+          <NavLink className="nav-link" to="/about">About Us</NavLink>
         </li>
         <li className="nav-item">
-        <Link className="nav-link" to="/contact">Contact Us</Link>
+        <NavLink className="nav-link" to="/contact">Contact Us</NavLink>
         </li>
       <li className="nav-item list-unstyled">
-          <Link className="btn" to="/signin">Sign in</Link>
+          <NavLink className="btn" to="/signin">Sign in</NavLink>
         </li>
         <li className="nav-item list-unstyled">
-          <Link className="btn" to="/register">Resgister</Link>
+          <NavLink className="btn" to="/register">Resgister</NavLink>
         </li>
 
       </ul>
@@ -59,9 +60,12 @@ const Navbar = () => {
 <Outlet />
 
 
+
+
    </>
     
   )
+  
   
   
   

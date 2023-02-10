@@ -13,8 +13,12 @@
     padding-left: 50px;
     padding-bottom: 10px;
 }
+.navbar-nav .nav-link{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .navbar-nav .nav-link.active{
     color: #1231e0;
+    border-bottom: 2px solid #1231e0;
 }
 .btn {
     background: #1231e0;
