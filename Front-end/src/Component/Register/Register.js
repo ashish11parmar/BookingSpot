@@ -1,6 +1,7 @@
 import React from 'react';
 import signup from '../Images/register.png';
 import {Link} from 'react-router-dom';
+import './Register.css'
 
 const Register = () => {
   return (
@@ -63,7 +64,7 @@ const Register = () => {
                   </div>
 
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" name='signup' id='signup' value="register"  className="btn btn-primary btn-lg">Register</button>
+                    <button type="submit" name='signup' id='signup' value="register"  className="btn-sbt">Register</button>
                   </div>
 
                 </form>

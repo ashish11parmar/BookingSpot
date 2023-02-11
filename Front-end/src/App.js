@@ -7,6 +7,7 @@ import About from './Component/About/About';
 import Contact from './Component/Contact/Contact';
 import Signin from './Component/Signin/Signin';
 import Register from './Component/Register/Register';
+import Hotel from './Component/Hotels/Hotel';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/room" element={<Room/>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/hotel" element={<Hotel/>} />
           <Route path='/signin' element={<Signin/>}/>
           <Route path='/register' element={<Register/>}/>
         </Route>

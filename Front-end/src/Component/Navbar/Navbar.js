@@ -26,7 +26,7 @@ const Navbar = () => {
         <li className="nav-item">
           <NavLink className="nav-link" to="/room">Rooms</NavLink>
         </li>
-        <li className="nav-item dropdown">
+        {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Hotels
           </a>
@@ -36,9 +36,12 @@ const Navbar = () => {
             <li><a className="dropdown-item" href="/">3 star hotel</a></li>
             <li><a className="dropdown-item" href="/">5 star hotel</a></li>
             <li><a className="dropdown-item" href="/">7 star hotel</a></li>
-            {/* <li><hr className="dropdown-divider" /></li> */}
-            {/* <li><a className="dropdown-item" href="/">Something else here</a></li> */}
+            <li><hr className="dropdown-divider" /></li>
+            <li><a className="dropdown-item" href="/">Something else here</a></li>
           </ul>
+        </li> */}
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/hotel">Hotels</NavLink>
         </li>
         <li className="nav-item">
           <NavLink className="nav-link" to="/about">About Us</NavLink>
@@ -46,10 +49,14 @@ const Navbar = () => {
         <li className="nav-item">
         <NavLink className="nav-link" to="/contact">Contact Us</NavLink>
         </li>
-      <li className="nav-item list-unstyled">
+        </ul>
+
+        <ul className="navbar-nav">
+
+      <li className="nav-item">
           <NavLink className="btn" to="/signin">Sign in</NavLink>
         </li>
-        <li className="nav-item list-unstyled">
+        <li className="nav-item">
           <NavLink className="btn" to="/register">Resgister</NavLink>
         </li>
 
