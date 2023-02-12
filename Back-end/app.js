@@ -6,6 +6,7 @@ dotenv.config({path:'../Back-end/config.env'});
 
 const app = express();
 app.use(express.json());
+app.use(require('./Router/auth'));   
 
 const PORT = process.env.PORT;
 app.listen(PORT, ()=>{console.log(`${PORT} is runnig`);})

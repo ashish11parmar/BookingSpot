@@ -1,12 +1,59 @@
 import React from 'react';
 import signup from '../Images/register.png';
-import {Link} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import './Register.css'
 
 const Register = () => {
+
+  const navigate = useNavigate();
+
+  const [user, setuser] = useState({
+
+    name:"", email:"",work:"",number:"",password:"",cpassword:""
+
+  });
+  let name, value;
+  const Handleinput = (e) =>{
+
+    name = e.target.name;
+    value = e.target.value;
+
+    setuser({...user, [name]:value})
+     
+  }
+
+  const PostData = async (e) =>{
+    e.preventDefault();
+
+    const {name, email,phone,work,password,cpassword} = user
+
+    const res = await fetch("/register", {
+      method:"POST",
+      headers:{
+         "Content-Type":"application/json"
+      },
+      body: JSON.stringify({
+        name, email,phone,work,password,cpassword
+      })
+    });
+    const data = await res.json();
+
+    if(data.status===422 || !data){
+      window.alert("Invalid Registration")
+      console.log("Invalid Registration");
+    }else{
+      window.alert("Registration  successfull")
+      console.log("Registration successfull");
+      navigate('/signin');
+    }
+
+  }
+
+
   return (
    <>
-   <section className="mt-5">
+<section className="mt-5">
   <div className="container h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-lg-12 col-xl-11">
@@ -22,7 +69,7 @@ const Register = () => {
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-user fa-lg me-3  fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="text" id="name" name='name'  placeholder='Name' className="form-control" />
+                      <input type="text" id="name" name='name' value={user.fisrtname} onChange={Handleinput} placeholder='Enater firstname' className="form-control" />
                     </div>
                   </div>
 
@@ -31,40 +78,42 @@ const Register = () => {
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="email" id="email" name='email'  placeholder='Email' className="form-control" />
+                      <input type="text" id="lastname" name='lastname' value={user.lastname} onChange={Handleinput} placeholder='Enter lastname' className="form-control" />
+                    </div>
+                  </div>
+
+                  
+
+                  <div className="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-briefcase fa-lg me-3 fa-fw"></i>
+                    <div className="form-group flex-fill mb-0">
+                      <input type="email" id="email" name='email' value={user.email} onChange={Handleinput} placeholder='Enter you email' className="form-control" />
                     </div>
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="number" id="phone" name='phone'  placeholder='Number' className="form-control" />
-                    </div>
-                  </div>
-
-                  <div className="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-briefcase fa-lg me-3 fa-fw"></i>
-                    <div className="form-group flex-fill mb-0">
-                      <input type="text" id="work" name='work' placeholder='Profession' className="form-control" />
+                      <input type="number" id="phone" name='phone' value={user.phone} onChange={Handleinput} placeholder='Enater number' className="form-control" />
                     </div>
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="password" id="password" name='password' placeholder='Password' className="form-control" />
+                      <input type="password" id="password" name='password' value={user.password} onChange={Handleinput} placeholder='Password' className="form-control" />
                     </div>
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="password" id="cpassword" name='cpassword'  placeholder='Conform password' className="form-control" />
+                      <input type="password" id="cpassword" name='cpassword' value={user.cpassword} onChange={Handleinput} placeholder='Conform password' className="form-control" />
                     </div>
                   </div>
 
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" name='signup' id='signup' value="register"  className="btn-sbt">Register</button>
+                    <button type="submit" name='signup' id='signup' value="register" onClick={PostData} className="btn btn-primary btn-lg">Register</button>
                   </div>
 
                 </form>
