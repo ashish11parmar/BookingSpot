@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-export default function Room() {
+const Room = () => {
+
+  const getRoom = async ()=>{
+
+    const response = await fetch('/room');
+    const data = await response.json();
+    console.log(data);
+
+
+  }
+
+  useEffect(()=>{
+        getRoom();
+  })
+
   return (
     <div>Room</div>
   )
 }
+
+export default Room

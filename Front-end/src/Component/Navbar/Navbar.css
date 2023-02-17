@@ -16,8 +16,7 @@
 .navbar-nav .nav-link{
     display: inline-block;
     position: relative;
-    color: 
-  #020e15;
+    color:#1231e0;
 }
 .navbar-nav .nav-link:after{
     content: '';
