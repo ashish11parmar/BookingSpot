@@ -1,22 +1,42 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react';
+import room from '../Images/room.png';
 
 const Room = () => {
 
-  const getRoom = async ()=>{
+  const [rooms, setrooms] = useState([])
 
-    const response = await fetch('/room');
+  const getRoom = async () => {
+
+    const response = await fetch('/getallrooms');
     const data = await response.json();
-    console.log(data);
-
-
+    setrooms(data)
   }
 
-  useEffect(()=>{
-        getRoom();
-  })
+  useEffect(() => {
+    getRoom();
+  }, [])
 
   return (
-    <div>Room</div>
+    <>
+    <div className='image'>
+      <img className='image' src={room} alt='room' style={{'width':'100%', 'height':'650px'}}/>
+      <div className='datepicker'>
+
+      </div>
+    </div>
+          {
+            rooms.map((room) => {
+              return (
+                <>
+             
+
+                </>
+              )
+            })
+          }
+
+    </>
+
   )
 }
 

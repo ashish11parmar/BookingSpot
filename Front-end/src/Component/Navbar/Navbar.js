@@ -14,7 +14,7 @@ const Navbar = () => {
    
    <nav className="navbar navbar-expand-lg" id='navigation'>
   <div className="container-fluid">
-    <img width="180px" height="50px" className='logo' src={Logo} alt="BOOKING SPOT"/>
+    <img width="120px" height="40px" className='logo' src={Logo} alt="BOOKING SPOT"/>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>

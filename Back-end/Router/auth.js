@@ -3,6 +3,8 @@ require('../db/db');
 const User = require('../Model/User');
 const router = express.Router();
 
+
+
 //Registration page 
 
 router.post('/register', async (req, res) => {
