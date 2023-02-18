@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import './Room.css';
 import room from '../Images/room.png';
 
 const Room = () => {
 
-  const [rooms, setrooms] = useState([])
+  const [rooms, setrooms] = useState([]);
 
   const getRoom = async () => {
 
@@ -13,27 +14,39 @@ const Room = () => {
   }
 
   useEffect(() => {
+
     getRoom();
+
   }, [])
 
   return (
     <>
-    <div className='image'>
-      <img className='image' src={room} alt='room' style={{'width':'100%', 'height':'650px'}}/>
-      <div className='datepicker'>
+      <div className='image'>
+        <img className='image' src={room} alt='room' style={{ 'width': '100%', 'height': '650px' }} />
 
       </div>
-    </div>
+      <div className='container'>
+        <div className='row'>
+
           {
             rooms.map((room) => {
               return (
                 <>
-             
+                  <div class="card mt-5 mx-3 mb-5">
+                    <img src={room.imageurls[0]} class="card-img-top mt-2" alt="room" />
+                    <div class="card-body">
+                      <h5 class="card-title">{room.name}</h5>
+                      <p class="card-text">{room.description}</p>
+                     
+                    </div>
+                  </div>
 
                 </>
               )
             })
           }
+        </div>
+      </div>
 
     </>
 
