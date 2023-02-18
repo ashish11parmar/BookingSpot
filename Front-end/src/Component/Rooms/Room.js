@@ -37,6 +37,9 @@ const Room = () => {
                     <div class="card-body">
                       <h5 class="card-title">{room.name}</h5>
                       <p class="card-text">{room.description}</p>
+                      <p>Type: {room.type}</p>
+                      <p>Maxcount: {room.maxcount}</p>
+                      <p>phone: {room.phonenumber}</p>
                      
                     </div>
                   </div>
