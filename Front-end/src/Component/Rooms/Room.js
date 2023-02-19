@@ -1,12 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import roomcss from './Room.module.css';
 import room from '../Images/room.png';
+import {
+  MDBBtn,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalFooter,
+} from 'mdb-react-ui-kit';
 
 const Room = () => {
 
   const [rooms, setrooms] = useState([]);
   const [loading, setloading] = useState([]);
   const [error, seterror] = useState([]);
+
+  const [staticModal, setStaticModal] = useState(false);
+
+  const toggleShow = () => setStaticModal(!staticModal);
 
   const getRoom = async () => {
     
@@ -45,11 +59,21 @@ const Room = () => {
                       <p>Type: {room.type}</p>
                       <p>Maxcount: {room.maxcount}</p>
                       <p>phone: {room.phonenumber}</p>
-                      <p className={roomcss.detail}>More Detail</p>
+                      <p className={roomcss.detail} onClick={toggleShow}>More Detail</p>
                     </div>
                   </div>
 
-
+<MDBModal staticBackdrop tabIndex='-1' show={staticModal} setShow={setStaticModal}>
+  <MDBModalDialog>
+    <MDBModalContent>
+      <MDBModalHeader>
+        <MDBModalTitle>{room.name}</MDBModalTitle>
+        <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
+      </MDBModalHeader>
+      <MDBModalBody>...</MDBModalBody>
+    </MDBModalContent>
+  </MDBModalDialog>
+</MDBModal>
                 </>
               )
             }))
