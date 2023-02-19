@@ -5,7 +5,7 @@ import './Navbar.css';
 import { NavLink, Outlet } from 'react-router-dom';
 
 
-const Navbar = () => {
+const Navbar = (props) => {
 
 
   return (
@@ -21,10 +21,10 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav">
         <li className="nav-item ">
-          <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
+          <NavLink className="nav-link" aria-current="page" to="/">{props.home}</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/room">Rooms</NavLink>
+          <NavLink className="nav-link" to="/room">{props.room}</NavLink>
         </li>
         {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,23 +41,23 @@ const Navbar = () => {
           </ul>
         </li> */}
         <li className="nav-item">
-          <NavLink className="nav-link" to="/hotel">Hotels</NavLink>
+          <NavLink className="nav-link" to="/hotel">{props.hotel}</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/about">About Us</NavLink>
+          <NavLink className="nav-link" to="/about">{props.about}</NavLink>
         </li>
         <li className="nav-item">
-        <NavLink className="nav-link" to="/contact">Contact Us</NavLink>
+        <NavLink className="nav-link" to="/contact">{props.contact}</NavLink>
         </li>
         </ul>
 
         <ul className="navbar-nav">
 
       <li className="nav-item">
-          <NavLink className="btn" to="/signin">Sign in</NavLink>
+          <NavLink className="btn" to="/signin">{props.signin}</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="btn" to="/register">Resgister</NavLink>
+          <NavLink className="btn" to="/register">{props.register}</NavLink>
         </li>
 
       </ul>
