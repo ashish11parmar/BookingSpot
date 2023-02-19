@@ -8,6 +8,7 @@ import Contact from './Component/Contact/Contact';
 import Signin from './Component/Signin/Signin';
 import Register from './Component/Register/Register';
 import Hotel from './Component/Hotels/Hotel';
+import Footer from './Component/footer/Footer';
 
 const App = () => {
   return (
@@ -23,8 +24,9 @@ const App = () => {
           <Route exact path='/signin' element={<Signin/>}/>
           <Route exact path='/register' element={<Register/>}/>
         </Route>
-      </Routes>
+    </Routes>
     </BrowserRouter>
+    <Footer/>
     </>
   )
 }

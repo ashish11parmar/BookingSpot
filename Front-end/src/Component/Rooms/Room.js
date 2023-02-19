@@ -9,7 +9,6 @@ import {
   MDBModalHeader,
   MDBModalTitle,
   MDBModalBody,
-  MDBModalFooter,
 } from 'mdb-react-ui-kit';
 
 const Room = () => {
@@ -42,8 +41,11 @@ const Room = () => {
     <>
       <div className='image'>
         <img className='image' src={room} alt='room' style={{ 'width': '100%', 'height': '650px' }} />
-
+        <div className={roomcss.searchbox}>
+          <h1>Hello</h1>
+        </div>
       </div>
+
       <div className='container'>
         <div className='row'>
 

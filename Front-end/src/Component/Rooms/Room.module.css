@@ -25,4 +25,11 @@
 .detail:hover{
     color: blue;
 }
+.searchbox{
+    background-color: blue;
+    margin: auto;
+    width: 70%;
+    border: 3px solid green;
+    padding: 10px;
+}
 
