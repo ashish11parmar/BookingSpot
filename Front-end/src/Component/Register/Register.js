@@ -2,7 +2,7 @@ import React from 'react';
 import signup from '../Images/register.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import './Register.css'
+import registercss from './Register.module.css';
 
 const Register = () => {
 
@@ -113,7 +113,7 @@ const Register = () => {
                   </div>
 
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" name='signup' id='signup' value="register" onClick={PostData} className="btn btn-primary btn-lg">Register</button>
+                    <button type="submit" name='signup' id='signup' value="register" onClick={PostData} className={registercss.btn}>Register</button>
                   </div>
 
                 </form>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Room.css';
+import roomcss from './Room.module.css';
 import room from '../Images/room.png';
 
 const Room = () => {
@@ -32,11 +32,11 @@ const Room = () => {
             rooms.map((room) => {
               return (
                 <>
-                  <div class="card mt-5 mx-3 mb-5">
-                    <img src={room.imageurls[0]} class="card-img-top mt-2" alt="room" />
-                    <div class="card-body">
-                      <h5 class="card-title">{room.name}</h5>
-                      <p class="card-text">{room.description}</p>
+                  <div className={roomcss.card}>
+                    <img src={room.imageurls[0]} className={roomcss.cardimg}alt="room" />
+                    <div className="card-body">
+                      <h5 className="card-title">{room.name}</h5>
+                      <p className="card-text">{room.description}</p>
                       <p>Type: {room.type}</p>
                       <p>Maxcount: {room.maxcount}</p>
                       <p>phone: {room.phonenumber}</p>
