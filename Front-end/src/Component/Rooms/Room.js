@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import roomcss from './Room.module.css';
 import room from '../Images/room.png';
-import {
-  MDBBtn,
-  MDBModal,
-  MDBModalDialog,
-  MDBModalContent,
-  MDBModalHeader,
-  MDBModalTitle,
-  MDBModalBody,
-} from 'mdb-react-ui-kit';
+
 
 const Room = () => {
 
@@ -17,12 +9,9 @@ const Room = () => {
   const [loading, setloading] = useState([]);
   const [error, seterror] = useState([]);
 
-  const [staticModal, setStaticModal] = useState(false);
-
-  const toggleShow = () => setStaticModal(!staticModal);
 
   const getRoom = async () => {
-    
+
     setloading(true)
     const response = await fetch('/getallrooms');
     const data = await response.json();
@@ -61,29 +50,33 @@ const Room = () => {
                       <p>Type: {room.type}</p>
                       <p>Maxcount: {room.maxcount}</p>
                       <p>phone: {room.phonenumber}</p>
-                      <p className={roomcss.detail} onClick={toggleShow}>More Detail</p>
+                      <p className={roomcss.detail} data-bs-toggle="modal" data-bs-target="#exampleModal">More Detail</p>
                     </div>
                   </div>
-
-<MDBModal staticBackdrop tabIndex='-1' show={staticModal} setShow={setStaticModal}>
-  <MDBModalDialog>
-    <MDBModalContent>
-      <MDBModalHeader>
-        <MDBModalTitle>{room.name}</MDBModalTitle>
-        <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
-      </MDBModalHeader>
-      <MDBModalBody>...</MDBModalBody>
-    </MDBModalContent>
-  </MDBModalDialog>
-</MDBModal>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">{room.name}</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          ...
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </>
               )
             }))
 
           }
 
+
+
         </div>
       </div>
+
 
     </>
 
