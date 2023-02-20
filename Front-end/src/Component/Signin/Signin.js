@@ -17,19 +17,12 @@ const Signin = () => {
                 <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-5">Sign In</p>
 
                 <form method="POST" className="mx-1 mx-md-4">
-
-                 
-
-                  
-
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
                       <input type="email" id="email" name='email'  placeholder='Email' className="form-control" />
                     </div>
                   </div>
-
-
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
