@@ -1,8 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Signin.css';
 import login from '../Images/login.jpg';
 import {Link} from 'react-router-dom';
+import google from '../Images/google.png';
+import {GoogleLogin, GoogleLogout} from 'react-google-login';
 const Signin = () => {
+
+
+  const [showlogin, setshowlogin] = useState(true)
+  const [showlogout, setshowlogout] = useState(false)
+  const clientid = '191621319260-kotl3vilt2qkueb552dccsbgih0dam00.apps.googleusercontent.com';
+
+  const onLoginsucess = (res) =>{
+    console.log('login success');
+    setshowlogin(false);
+    setshowlogout(true);
+  }
+
+  const onLoginfail = (res) =>{
+console.log('fail');
+
+  }
+
+  const logout = (res)=>{
+    alert('logout');
+    setshowlogout(false);
+setshowlogin(true)
+  }
+
   return (
    <>
   <section className="mt-5">
@@ -33,7 +58,25 @@ const Signin = () => {
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button type="submit" name='signin' id='signin' value="login"  className="btn-sbt">Signin</button>
                   </div>
+                  <div className=" d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+{showlogin ?
+                  <GoogleLogin className='google'
+                   clientId={clientid}
+                   buttonText='Sign in with google'
+                   onSuccess={onLoginsucess}
+                   onFailure={onLoginfail}
+                   cookiePolicy={'single_host_origin'}
+                  /> : null}
+{
+  showlogout ?
+                  <GoogleLogout
 
+                  clientId={clientid}
+                  buttonText='Logout'
+                  onLogoutSuccess={logout}
+                  
+                  />:null}
+                  </div>
                 </form>
 
               </div>

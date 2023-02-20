@@ -69,7 +69,7 @@ const Register = () => {
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-user fa-lg me-3  fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="text" id="name" name='name' value={user.fisrtname} onChange={Handleinput} placeholder='Enater firstname' className="form-control" />
+                      <input type="text" id="name" name='name' value={user.fisrtname} onChange={Handleinput} placeholder='Enater firstname' className="form-control" required />
                     </div>
                   </div>
 
@@ -78,7 +78,7 @@ const Register = () => {
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="text" id="lastname" name='lastname' value={user.lastname} onChange={Handleinput} placeholder='Enter lastname' className="form-control" />
+                      <input type="text" id="lastname" name='lastname' value={user.lastname} onChange={Handleinput} placeholder='Enter lastname' className="form-control" required />
                     </div>
                   </div>
 
@@ -87,28 +87,28 @@ const Register = () => {
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-briefcase fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="email" id="email" name='email' value={user.email} onChange={Handleinput} placeholder='Enter you email' className="form-control" />
+                      <input type="email" id="email" name='email' value={user.email} onChange={Handleinput} placeholder='Enter you email' className="form-control" required />
                     </div>
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="number" id="phone" name='phone' value={user.phone} onChange={Handleinput} placeholder='Enater number' className="form-control" />
+                      <input type="number" id="phone" name='phone' value={user.phone} onChange={Handleinput} placeholder='Enater number' className="form-control" required />
                     </div>
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="password" id="password" name='password' value={user.password} onChange={Handleinput} placeholder='Password' className="form-control" />
+                      <input type="password" id="password" name='password' value={user.password} onChange={Handleinput} placeholder='Password' className="form-control" required />
                     </div>
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div className="form-group flex-fill mb-0">
-                      <input type="password" id="cpassword" name='cpassword' value={user.cpassword} onChange={Handleinput} placeholder='Conform password' className="form-control" />
+                      <input type="password" id="cpassword" name='cpassword' value={user.cpassword} onChange={Handleinput} placeholder='Conform password' className="form-control" required/>
                     </div>
                   </div>
 

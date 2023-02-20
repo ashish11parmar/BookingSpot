@@ -9,6 +9,20 @@ const Room = () => {
   const [loading, setloading] = useState([]);
   const [error, seterror] = useState([]);
 
+  const [modeldata, setmodeldata] = useState({
+
+    _id: '',
+    name: '',
+    description: '',
+    type: '',
+  })
+
+  const showDetail = (_id) => {
+    fetch(`/getallrooms/${_id}`)
+      .then(resposne => resposne.json())
+      .then(res => setmodeldata(res))
+  }
+
 
   const getRoom = async () => {
 
@@ -50,9 +64,12 @@ const Room = () => {
                       <p>Type: {room.type}</p>
                       <p>Maxcount: {room.maxcount}</p>
                       <p>phone: {room.phonenumber}</p>
-                      <p className={roomcss.detail} data-bs-toggle="modal" data-bs-target="#exampleModal">More Detail</p>
+                      <p className={roomcss.detail} data-bs-toggle="modal" onClick={(e) => showDetail(room._id)} data-bs-target="#exampleModal">More Detail</p>
                     </div>
                   </div>
+
+
+
                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -61,21 +78,22 @@ const Room = () => {
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                          ...
+                          <p>Type:{room.type}</p>
+                          <p>{room.phonenumber}</p>
                         </div>
                       </div>
                     </div>
                   </div>
+
                 </>
               )
             }))
 
           }
 
-
-
         </div>
       </div>
+
 
 
     </>
