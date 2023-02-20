@@ -79,7 +79,7 @@ const Room = () => {
                         </div>
                         <div class="modal-body">
                           <p>Type:{room.type}</p>
-                          <p>{room.phonenumber}</p>
+                          <p>{modeldata.phonenumber}</p>
                         </div>
                       </div>
                     </div>

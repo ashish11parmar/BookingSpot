@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Signin.css';
 import login from '../Images/login.jpg';
 import {Link} from 'react-router-dom';
-import google from '../Images/google.png';
+// import google from '../Images/google.png';
 import {GoogleLogin, GoogleLogout} from 'react-google-login';
 const Signin = () => {
 
