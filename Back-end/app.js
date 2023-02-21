@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const mongoose =require('mongoose');
-const roomsroute = require('./Router/RoomRouter');
+const roomsroute = require('./Router/Router');
 dotenv.config({path:'../Back-end/config.env'});
 
 

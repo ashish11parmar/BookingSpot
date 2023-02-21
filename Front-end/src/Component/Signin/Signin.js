@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import { useNavigate } from 'react-router-dom';
 import './Signin.css';
 import login from '../Images/login.jpg';
 import {Link} from 'react-router-dom';
@@ -28,6 +30,47 @@ console.log('fail');
 setshowlogin(true)
   }
 
+  // sign in using email
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+    
+  const navigate = useNavigate();
+
+  const LoginUser = async(e) =>{
+    e.preventDefault();
+    const res = await fetch('/signin', {
+      method:'POST',
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body:JSON.stringify({
+        email,
+        password
+      })
+    });
+
+    const data = res.json();
+
+    if(res.status === 400){
+      window.alert('Invalid credential');
+    }
+    else if (!email){
+      window.alert('Invalid Email....');
+    }
+    else if (!password){
+      window.alert('Invalid Password....');
+    }
+    else{
+      window.alert('Login success');
+      navigate('/');
+    }
+
+  }
+
+
+
   return (
    <>
   <section className="mt-5">
@@ -43,20 +86,24 @@ setshowlogin(true)
 
                 <form method="POST" className="mx-1 mx-md-4">
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-person-fill me-3" viewBox="0 0 16 16">
+  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+</svg>
                     <div className="form-group flex-fill mb-0">
-                      <input type="email" id="email" name='email'  placeholder='Email' className="form-control" />
+                      <input type="email" id="email" name='email'  value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email' className="form-control" />
                     </div>
                   </div>
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-key fa-lg me-3 fa-fw"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-key-fill me-3" viewBox="0 0 16 16">
+  <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+</svg>
                     <div className="form-group flex-fill mb-0">
-                      <input type="password" id="password"  name='password' placeholder='Password' className="form-control" />
+                      <input type="password" id="password"  name='password' value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Password' className="form-control" />
                     </div>
                   </div>
     
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" name='signin' id='signin' value="login"  className="btn-sbt">Signin</button>
+                    <button type="submit" name='signin' id='signin' value="login" onClick={LoginUser} className="btn-sbt">Signin</button>
                   </div>
                   <div className=" d-flex justify-content-center mx-4 mb-3 mb-lg-4">
 {showlogin ?

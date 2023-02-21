@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import roomcss from './Room.module.css';
 import room from '../Images/room.png';
+import Loader from '../Loader/Loader';
 
 
 const Room = () => {
@@ -53,7 +55,7 @@ const Room = () => {
         <div className='row'>
 
           {
-            loading ? (<h1>Loading..</h1>) : error ? (<h1>Error</h1>) : (rooms.map((room) => {
+            loading ?  (<h1><Loader/></h1>) : error ? (<h1>Error</h1>) : (rooms.map((room) => {
               return (
                 <>
                   <div className={roomcss.card}>
