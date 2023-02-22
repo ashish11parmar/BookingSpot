@@ -14,6 +14,10 @@ import himage8 from '../Images/catering.jpg';
 import himage9 from '../Images/laundry.jpg';
 
 
+//carousle java script
+
+
+
 const Home = () => {
   return (
     <>
@@ -36,6 +40,7 @@ const Home = () => {
                       </div>
                   </div>
 
+
                   <Carousel cols={2} rows={1} gap={10} loop>
       <Carousel.Item>
         <img width="100%" src="https://picsum.photos/800/600?random=1" />
@@ -52,13 +57,15 @@ const Home = () => {
     </Carousel>
 
 
+
 <div class="row text-center">
-                      <div class="col-lg-12 mt-5">
+                      <div class="col-lg-12 mt-5 mb-5">
                           <div class="section-title  ">
                               <h2>Discover Our service</h2>
                           </div>
                       </div>
                   </div>
+
                   <Carousel cols={2} rows={1} gap={10} loop>
       <Carousel.Item>
         <img width="100%" src="https://picsum.photos/800/600?random=1" />
@@ -82,6 +89,63 @@ const Home = () => {
 
 
 
+  <div class="container text-center  my-3 " >
+		<div class="row  ">
+			<div id="#Carousel-1" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner" role="listbox">
+					<div class="carousel-item active">
+						<div class="col-xs-3">
+						
+								<div class="card-img">
+									<img src={himage6} style={{width:'280px',height:'300px'}} class="img-fluid"/>
+								</div>
+								<div class="card-img h6 mt-3 mb-3">Drink & Juice</div>
+						
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="col">
+						
+								<div class="card-img">
+									<img src={himage7} style={{width:'280px',height:'300px'}} class="img-fluid"/>
+								</div>
+								<div class="card-img h6 mt-3 mb-3">Hire driver</div>
+							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="col">
+					
+								<div class="card-img">
+									<img src={himage8} style={{width:'280px',height:'300px'}} class="img-fluid"/>
+								</div>
+								<div class="card-img h6 mt-3 mb-3">Catering Service</div>
+							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="col">
+							
+								<div class="card-img">
+									<img src={himage9} style={{width:'280px',height:'300px'}} class="img-fluid"/>
+								</div>
+								<div class="card-img h6 mt-3 mb-3">Laundry</div>
+							
+						</div>
+					</div>
+				
+				</div>
+				<a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				</a>
+				<a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				</a>
+			</div>
+		</div>		
+	</div>
+
+
 
       <div class="row text-center mt-5">
                       <div class="col-lg-12 ">
@@ -95,14 +159,14 @@ const Home = () => {
       <div class='carousel-item active'>
 
           <div class=" ts-item text-center ">
-                                  <p>"The room was clean and comfortable, and the staff were extremely friendly and helpful. I would
-                                  definitely stay here again.""The location was perfect for my needs, and the hotel itself was beautiful and
-                                    well-maintained.Highly recommend!"</p>
+              <p>"The room was clean and comfortable, and the staff were extremely friendly and helpful. I would
+                definitely stay here again.""The location was perfect for my needs, and the hotel itself was beautiful and
+                well-maintained.Highly recommend!"</p>
 
           </div>
           <div class="ti-author text-center">
             <h5> - Ashish Parmar</h5>
-            <div class="rating mt-3">
+            <div class="rating mt-3 mb-3">
               <a href='/' className='fticon me-3 text-reset'>
                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
@@ -130,7 +194,7 @@ const Home = () => {
           </div>
         </div>
 
-          <div class="carousel-item">
+          <div class="carousel-item ">
             <div class=" ts-item text-center">
                 <p>"The room was clean and comfortable, and the staff were extremely friendly and helpful. I would
                   definitely stay here again.""The location was perfect for my needs, and the hotel itself was beautiful and
@@ -138,7 +202,7 @@ const Home = () => {
             </div>
           <div class="ti-author text-center">
               <h5> - Chelsi Ladani</h5>
-                 <div class="rating mt-3">
+                 <div class="rating mt-3 mb-3">
                     <a href='/' className='fticon me-3 text-reset'>
                       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
                         <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
@@ -167,12 +231,12 @@ const Home = () => {
               </div>
             </div>
         
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <a class="carousel-control-prev mx-5" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon-1" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <a class="carousel-control-next mx-5" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon-1" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
