@@ -42,10 +42,15 @@ const Room = () => {
 
   return (
     <>
-      <div className='image'>
-        <img className='image' src={room} alt='room' style={{ 'width': '100%', 'height': '650px' }} />
-        <div className={roomcss.searchbox}>
-          <h1>Hello</h1>
+     <div className='image'>
+         <img  className='image' src={room} alt="room" style={{ 'width': '100%', 'height': '650px' }} />
+        <div className='searchbox rounded-2'>
+         <div className='centerd h1'>Escape to paradise with a single click 
+        -Book your hotel today!
+        {/* <div className='searchbar rounded-2' ></div> */}
+          <input type={Date} id="number" placeholder='Check-in date' className='check-in h5 rounded-2 mx-1 '/>
+          <input type={Date} id="number" placeholder='Check-out date' className='check-out h5 rounded-2  '/>
+        </div>
         </div>
       </div>
 
