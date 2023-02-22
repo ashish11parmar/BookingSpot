@@ -178,58 +178,6 @@ const Home = () => {
       </div>
 
 
-
-      {/* <div class="container ">
-            <div class="row text-center">
-                <div class="col-lg-12 ">
-                    <div class="section-title ">
-                       
-                        <h2>What Customers Say?</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="carousel-inner w-500">
-                    <div class="carousel-item active  ">
-                        <div class=" ts-item text-center">
-                            <p>"The room was clean and comfortable, and the staff were extremely friendly and helpful. I would
-                             definitely stay here again.""The location was perfect for my needs, and the hotel itself was beautiful and
-                              well-maintained.Highly recommend!"</p>
-                            <div class="ti-author">
-                                <div class="rating">
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star-half_alt"></i>
-                                </div>
-                                <h5> - Ashish Parmar</h5>
-                            </div>
-                            <img src="" alt=""/>
-                        </div>
-                        <div class=" ts-item text-center">
-                            <p>"The room was clean and comfortable, and the staff were extremely friendly and helpful. I would 
-                            definitely stay here again.""The location was perfect for my needs, and the hotel itself was beautiful and
-                             well-maintained. Highly recommend!"</p>
-                            <div class="ti-author">
-                                <div class="rating">
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star"></i>
-                                    <i class="icon_star-half_alt"></i>
-                                </div>
-                                <h5> - Chelsi Ladani</h5>
-                            </div>
-                            <img src="" alt=""/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div> */}
-
-
    </>
   )
 }
