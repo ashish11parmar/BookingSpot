@@ -2,13 +2,17 @@
     width: 26vh;
     height: 26vh;
     padding: 0px 0px 10px 0px;
+
 }
 .card{
     width: 30vh;
     height: auto;
-    border: 1px solid black;
+    border-radius: 10px;
     margin:50px 0px 20px 50px;
     text-align: left;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 2px 3px 5px 2px #888888;
     
 }
 .title{
@@ -29,9 +33,12 @@
 .centerd{
     position: relative;
     text-align: center;
-    color: blue;
-    bottom: 300px;
+    color: black;
+    bottom: 400px;
+    height: 50px;
+    font-size: 40px;
 
     
 }
+
 

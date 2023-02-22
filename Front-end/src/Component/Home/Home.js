@@ -1,5 +1,6 @@
 import React from 'react'
 import home from '../Images/room.png';
+import Carousel from 'react-grid-carousel';
 import './Home.css';
 import himage from '../Images/hotel.jpg';
 import himage1 from '../Images/hotel 1.jpg';
@@ -39,108 +40,21 @@ const Home = () => {
                       </div>
                   </div>
 
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner mt-5">
-    <div class="carousel-item active">
-    <div class="container">
-  <div class="row">
-    <div class="col-sm">
-    <div className='card-img'>
-    <img src={himage}  alt='' style={{width:'280px', height:'300px'}}/>
-   <p className='card-img h6 mt-3 mb-3'>RPJ Hotel</p>
-   </div>
-    </div>
-    <div class="col-sm">
-    <div className='card-img'>
-    <img src={himage1}  alt='' style={{width:'280px', height:'300px'}}/>
-    <p className='card-img h6 mt-3 mb-3'>Rajkot Finest</p>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div className='card-img'>
-    <img src={himage2}  alt='' style={{width:'280px', height:'300px'}}/>
-    <p className='card-img h6 mt-3 mb-3'>TGT Hotel</p>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div className='card-img'>
-    <img src={himage3}  alt='' style={{width:'280px', height:'300px'}}/>
-    <p className='card-img h6 mt-3 mb-3'>Pinevinta Hotel</p>
-    </div>
-    </div>
-  </div>
-  </div>
-    </div>
-    <div class="carousel-item">
-    <div class="container">
-  <div class="row">
-  <div class="col-sm">
-  <div className='card-img'>
-    <img src={himage4}  alt='' style={{width:'280px', height:'300px'}}/>
-   <p className='card-img h6 mt-3 mb-3'>Nova Hotel</p>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div className='card-img'>
-    <img src={himage5}  alt='' style={{width:'280px', height:'300px'}}/>
-    <p className='card-img h6 mt-3 mb-3'>Hotel Benquie</p>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div className='card-img'>
-    <img src={himage2}  alt='' style={{width:'280px', height:'300px'}}/>
-    <p className='card-img h6 mt-3 mb-3'>TGT Hotel</p>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div className='card-img'>
-    <img src={himage3}  alt='' style={{width:'280px', height:'300px'}}/>
-    <p className='card-img h6 mt-3 mb-3'>Pinevinta Hotel</p>
-    </div>
-    </div>
-  </div>
-  </div>
-    </div>
-    <div class="carousel-item">
-    <div class="container">
-  <div class="row">
-  <div class="col-sm">
-  <div className='card-img'>
-    <img src={himage}  alt='' style={{width:'280px', height:'300px'}}/>
-   <p className='card-img h6 mt-3 mb-3'>RPJ Hotel</p>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div className='card-img'>
-    <img src={himage1}  alt='' style={{width:'280px', height:'300px'}}/>
-    <p className='card-img h6 mt-3 mb-3'>Rajkot Finest</p>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div className='card-img'>
-    <img src={himage5}  alt='' style={{width:'280px', height:'300px'}}/>
-    <p className='card-img h6 mt-3 mb-3'>Hotel Benquie</p>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div className='card-img'>
-    <img src={himage4}  alt='' style={{width:'280px', height:'300px'}}/>
-    <p className='card-img h6 mt-3 mb-3'>Nova Hotel</p>
-    </div>
-    </div>
-  </div>
-  </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-   
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    
-  </a>
-</div>
+
+                  <Carousel cols={2} rows={1} gap={10} loop>
+      <Carousel.Item>
+        <img width="100%" src="https://picsum.photos/800/600?random=1" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width="100%" src="https://picsum.photos/800/600?random=2" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width="100%" src="https://picsum.photos/800/600?random=3" />
+      </Carousel.Item>
+      <Carousel.Item>
+      <img width="100%" src="https://picsum.photos/800/600?random=3" />
+      </Carousel.Item>
+    </Carousel>
 
 
 
@@ -152,61 +66,25 @@ const Home = () => {
                       </div>
                   </div>
 
-  <div class="container text-center  my-3">
-		<div class="row  ">
-			<div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-				<div class="carousel-inner" role="listbox">
-					<div class="carousel-item active">
-						<div class="col-sm">
-						
-								<div class="card-img">
-									<img src={himage6} style={{width:'280px',height:'300px'}} class="img-fluid"/>
-								</div>
-								<div class="card-img h6 mt-3 mb-3">Drink & Juice</div>
-						
-						</div>
-					</div>
-					<div class="carousel-item">
-						<div class="col-sm">
-						
-								<div class="card-img">
-									<img src={himage7} style={{width:'280px',height:'300px'}} class="img-fluid"/>
-								</div>
-								<div class="card-img h6 mt-3 mb-3">Hire driver</div>
-							
-						</div>
-					</div>
-					<div class="carousel-item">
-						<div class="col-sm">
-					
-								<div class="card-img">
-									<img src={himage8} style={{width:'280px',height:'300px'}} class="img-fluid"/>
-								</div>
-								<div class="card-img h6 mt-3 mb-3">Catering Service</div>
-							
-						</div>
-					</div>
-					<div class="carousel-item">
-						<div class="col-sm">
-							
-								<div class="card-img">
-									<img src={himage9} style={{width:'280px',height:'300px'}} class="img-fluid"/>
-								</div>
-								<div class="card-img h6 mt-3 mb-3">Laundry</div>
-							
-						</div>
-					</div>
-				
-				</div>
-				<a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				</a>
-				<a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				</a>
-			</div>
-		</div>		
-	</div>
+                  <Carousel cols={2} rows={1} gap={10} loop>
+      <Carousel.Item>
+        <img width="100%" src="https://picsum.photos/800/600?random=1" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width="100%" src="https://picsum.photos/800/600?random=2" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width="100%" src="https://picsum.photos/800/600?random=3" />
+      </Carousel.Item>
+      <Carousel.Item>
+      <img width="100%" src="https://picsum.photos/800/600?random=3" />
+      </Carousel.Item>
+      <Carousel.Item>
+      <img width="100%" src="https://picsum.photos/800/600?random=3" />
+      </Carousel.Item>
+    </Carousel>
+     
+
 
 
 

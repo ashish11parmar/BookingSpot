@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import "../Contact/Contact.module.css";
 
 const Contact = () => {
+
+  const getRoom = async () => {
+
+  
+    const response = await fetch('/getdata');
+    const data = await response.json();
+  }
+
+  useEffect(() => {
+    getRoom();
+  }, [])
+
   return (
     <>
       {/* parent class  */}

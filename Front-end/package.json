@@ -20,7 +20,10 @@
     "react-dom": "^18.2.0",
     "react-google-login": "^5.2.2",
     "react-grid-carousel": "^1.0.1",
+<<<<<<< HEAD
     "react-loader-spinner": "^5.3.4",
+=======
+>>>>>>> 4e5a11f5afc174e8c094ce649fedbac700a06812
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.8",
