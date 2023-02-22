@@ -20,14 +20,14 @@ const Signin = () => {
   }
 
   const onLoginfail = (res) =>{
-console.log('fail');
+  console.log('fail');
 
   }
 
   const logout = (res)=>{
     alert('logout');
     setshowlogout(false);
-setshowlogin(true)
+    setshowlogin(true)
   }
 
   // sign in using email
@@ -123,6 +123,8 @@ setshowlogin(true)
                   onLogoutSuccess={logout}
                   
                   />:null}
+
+                  
                   </div>
                 </form>
 
