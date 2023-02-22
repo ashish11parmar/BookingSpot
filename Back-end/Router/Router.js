@@ -5,7 +5,7 @@ const Room = require('../Model/Room');
 
 const router = express.Router();
 
-router.get('/getallrooms', async(req, res)=>{
+router.get('/room', async(req, res)=>{
         try {
         const rooms = await Room.find({})
         res.send(rooms)

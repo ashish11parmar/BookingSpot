@@ -3,42 +3,36 @@ import { Navigate } from 'react-router-dom';
 
 const Hotel = () => {
 
-
-  const callHotelpage =async () =>{
-try{
-
-
-    const res = await fetch('/hotel', {
-      method:'GET',
-      headers:{
-        Accept:"application/json",
-        "Content-Type" : "application/json",
-      },
-      credentials:"include"
-    });
-    const data = await res.json();
-    console.log(data);
-
-    if(!res.status === 200){
-      const error = new Error(res.error);
-      throw error;
+  const verifyPage=async()=>{
+    try{
+        const res=await fetch('/hotel',{
+            method:"GET",
+            setHeader:{
+                Accept:"application/json",
+                "Content-Type":"application/json"
+            },
+            credentials:"include"
+        });
+        const data=await res.json();
+        console.log(data);
+        
+        if(!res.status===200){
+            const err=new Error(res.error);
+            throw err;
+        }
+    }catch(err) {
+        console.log(err);
+        Navigate.push("/signin");
     }
+}
 
-  }catch(err){
-
-    console.log(err);
-    Navigate('/signin')
-
-  }
+useEffect(()=>{
+    verifyPage();
+},[])
 
 
-  }
+   
 
-  useEffect(()=>{
-
-    callHotelpage();
-
-  },[]);
 
   return (
    <>
