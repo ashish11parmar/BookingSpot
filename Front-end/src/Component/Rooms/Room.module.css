@@ -1,20 +1,32 @@
 .cardimg{
-    width: 26vh;
-    height: 26vh;
+    width: 36vh;
+    height: 36vh;
     padding: 0px 0px 10px 0px;
 
 }
 .card{
-    width: 30vh;
+    width: 40vh;
     height: auto;
     border-radius: 10px;
     margin:50px 0px 20px 50px;
     text-align: left;
-    border: 1px solid;
-    padding: 10px;
-    box-shadow: 2px 3px 5px 2px #888888;
-    
+    border-radius: 10px;
+  justify-content: center;
+  -webkit-flex-wrap: wrap; 
+  display: -webkit-flex;
+	display: flex;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    flex-wrap: wrap;
+	margin-top: 15px;
+	padding: 1.5%;
+    box-sizing: border-box;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
+
+.cards:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
+  }
 .title{
     text-align: center;
     font-weight: bold;

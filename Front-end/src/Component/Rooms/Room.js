@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import roomcss from './Room.module.css';
+import { useParams } from 'react-router-dom';
 import room from '../Images/room.png';
 import Loader from '../Loader/Loader';
 
 
 const Room = () => {
+
+  const {id} = useParams();
+  console.log(id);
+
+
 
   const [rooms, setrooms] = useState([]);
   const [loading, setloading] = useState([]);
@@ -19,8 +25,10 @@ const Room = () => {
     type: '',
   })
 
-  const showDetail = (_id) => {
-    fetch(`/getallrooms/${_id}`)
+  const showDetail = () => {
+    
+    fetch(`/room/${room.email}}`)
+
       .then(resposne => resposne.json())
       .then(res => setmodeldata(res))
   }
@@ -44,6 +52,7 @@ const Room = () => {
 
   return (
     <>
+  
       <div className='image'>
         <img className='image' src={room} alt="room" style={{ 'width': '100%', 'height': '650px' }} />
 
@@ -56,17 +65,19 @@ const Room = () => {
             loading ? (<h1><Loader /></h1>) : error ? (<h1>Error</h1>) : (rooms.map((room) => {
               return (
                 <>
+              
                   <div className={roomcss.card}>
                     <img src={room.imageurls[0]} className={roomcss.cardimg} alt="room" />
                     <div className="card-body">
-                      <h5 className={roomcss.title}>{room.name}</h5>
-                      <p className="card-text">{room.description}</p>
+                      <h5 className={roomcss.title}>{room.hotel_name}</h5>
                       <p>Type: {room.type}</p>
+                      <p>City: {room.city}</p>
                       <p>Maxcount: {room.maxcount}</p>
                       <p>phone: {room.phonenumber}</p>
-                      <p className={roomcss.detail} data-bs-toggle="modal" onClick={(e) => showDetail(room._id)} data-bs-target="#exampleModal">More Detail</p>
+                      <p className={roomcss.detail} data-bs-toggle="modal" onClick={(e) => showDetail(room.email)} data-bs-target="#exampleModal">More Detail</p>
                     </div>
                   </div>
+        
 
 
 
@@ -74,7 +85,7 @@ const Room = () => {
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">{room.name}</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">{modeldata.name}</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">

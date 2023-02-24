@@ -1,44 +1,177 @@
-import React, { useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+// import React, { useEffect } from 'react';
+// import { Navigate } from 'react-router-dom';
 
-const Hotel = () => {
+// const Hotel = () => {
 
-  const verifyPage=async()=>{
-    try{
-        const res=await fetch('/hotel',{
-            method:"GET",
-            setHeader:{
-                Accept:"application/json",
-                "Content-Type":"application/json"
-            },
-            credentials:"include"
-        });
-        const data=await res.json();
-        console.log(data);
+//   const verifyPage=async()=>{
+//     try{
+//         const res=await fetch('/hotel',{
+//             method:"GET",
+//             setHeader:{
+//                 Accept:"application/json",
+//                 "Content-Type":"application/json"
+//             },
+//             credentials:"include"
+//         });
+//         const data=await res.json();
+//         console.log(data);
         
-        if(!res.status===200){
-            const err=new Error(res.error);
-            throw err;
-        }
-    }catch(err) {
-        console.log(err);
-        Navigate.push("/signin");
-    }
-}
+//         if(!res.status===200){
+//             const err=new Error(res.error);
+//             throw err;
+//         }
+//     }catch(err) {
+//         console.log(err);
+//         Navigate.push("/signin");
+//     }
+// }
 
-useEffect(()=>{
-    verifyPage();
-},[])
+// useEffect(()=>{
+//     verifyPage();
+// },[])
 
 
    
 
 
-  return (
-   <>
-  <h1>Hotel</h1> 
-    </>
-  )
-}
+//   return (
+//    <>
+//   <h1>Hotel</h1> 
+//     </>
+//   )
+// }
 
-export default Hotel
+// export default Hotel
+
+import {useEffect,useState} from 'react';
+import { useParams } from 'react-router-dom';
+ 
+const Dashboard = () => {
+
+    const {id} = useParams();
+
+    console.log(id);
+
+   
+  const[record,setRecord] = useState([])
+  const [modeldata,setModeldata] = useState({
+     id:'',
+     userName:'',
+     username:'',
+     email:'',
+     website:''
+  })
+ 
+   const getData = () =>
+   {
+       fetch('/room')
+       .then(resposne=> resposne.json())
+       .then(res=>setRecord(res))
+   }
+ 
+   useEffect(() => {
+      getData();
+   },[])
+   
+    const showDetail = (_id) =>
+    {
+      
+      fetch(`/room/${_id}`)
+      .then(resposne=> resposne.json())
+      .then(res=>setModeldata(res))
+    }
+ 
+ 
+    return (
+    <div class="container mt-2">
+        <div class="row mt-2 ">
+            <div class="col-lg-1 col-md-6 col-sm-12">
+            </div>  
+            <div class="col-lg-11 col-md-6 col-sm-12">
+              <h5 class="mt-3 mb-3 text-secondary">
+               Check More Records of Employees
+              </h5>
+                <div class=" mt-5">
+                    <table class="table table-striped table-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Website</th>
+                                <th>Show Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                          {record.map((names,index)=>
+                           <tr key={index}>
+                               <td>{names._id}</td>
+                              <td>{names.name}</td>
+                              <td>{names.username}</td>
+                              <td>{names.email}</td>
+                              <td>{names.website}</td>
+                              <td><button class="btn btn-primary" onClick={(e)=>showDetail(names._id)} data-toggle="modal" data-target="#myModal">Get Details</button></td>
+                           </tr>
+                           )}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+ 
+ 
+{/* 
+ Model Box  */}
+ 
+      <div class="modal" id="myModal">
+        <div class="modal-dialog" style={{width:"700px"}}>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Row No : {modeldata.id}</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+             
+            <div class="modal-body">
+            <table class="table table-striped table-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Website</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <tr >
+                              <td>{modeldata._id}</td>
+                              <td>{modeldata.name}</td>
+                              <td>{modeldata.username}</td>
+                              <td>{modeldata.email}</td>
+                              <td>{modeldata.website}</td>
+                               
+                           </tr>
+                          
+                        </tbody>
+                    </table>
+            </div>
+             
+             
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+             
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+    )
+}
+ 
+ 
+export default Dashboard
